@@ -1,15 +1,29 @@
 /* Base Styles */
 body, html {
     margin: 0;
-    padding: 50px 0 0 0; /*Adds space at top of page */
+    padding: 50px 0 0 0; /* Adds space at the top of the page */
     font-family: 'Arial', sans-serif;
     scroll-behavior: smooth;
     color: white;
-    background: url('Artwork/medusa.jpg') no-repeat center center; /* Center the background */
-    background-size: cover; /* Ensure the background fills the screen */
-    background-attachment: fixed; /* Maintain fixed position */
-    height: 100%; /* Ensure the background covers the full height */
     min-height: 100vh; /* Support viewport height for mobile */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.fixed-bg {
+    position: relative;
+    z-index: 0; /* Keep content above the background */
+}
+
+.fixed-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Artwork/medusa.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1; /* Ensure it's behind all other content */
+    pointer-events: none;
 }
 
 header {
@@ -40,6 +54,8 @@ nav a:hover {
 
 /* Section Styling */
 section {
+    position: relative;
+    z-index: 1; /*places sections above the fixed background */
     background: rgba(0, 0, 0, 0.7);; /* Solid black background for sections */
     margin: 150px auto; /* Space between sections to reveal Medusa background */
     padding: 50px 50px; /* Internal padding for content */
@@ -57,19 +73,6 @@ section {
     text-align: left;
 }
 
-/* Fixed Medusa Background */
-.fixed-bg {
-    background: transparent; /* Transparent so the body background shows through */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-    box-shadow: none; /* Removed shadow from the main title section */
-    position: relative;
-    top: -150px;
-}
 
 .main-title {
     font-size: 7rem;
@@ -114,7 +117,7 @@ section {
     text-align: left;
 }
 
-/* Large Content Box Styling for Individual projectsProjects */
+/* Large Content Box Styling for Individual projects */
 .large-content-box {
     background: #131313; /* Specific background color for projects */
     color: white;
@@ -367,7 +370,7 @@ footer {
     border: none;
 }
 
-* Button Container */
+/* Button Container */
 .button-container {
     display: flex;
     gap: 20px;
@@ -563,15 +566,48 @@ footer {
     }
 }
 
-@media (max-width: 480px) { /* Phones */
+@media (max-width: 480px) { /* Phones */ 
+    
+    body, html {
+        margin: 0;
+        padding: 5px 0 0 0; /* Keep space at the top of the page */
+        font-family: 'Arial', sans-serif;
+        scroll-behavior: smooth;
+        color: white;
+        background: url('Artwork/medusa.jpg') no-repeat center center fixed;
+        background-size: cover; /* Ensure the image covers the viewport */
+        min-height: 100vh; /* Ensure full viewport height on all devices */
+    }
+    
     .fixed-bg {
-        width: 100%;
-        height: auto; /* Allow height to adjust based on content */
-        padding: 20px; /* Add padding to avoid clipping */
-        justify-content: flex-start; /* Align content closer to the top */
-        padding-top: 100px;
+        background: transparent; /* Ensure no background conflicts */
+        height: 100vh; /* Take full height of viewport */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        position: relative; /* Allow content to scroll normally */
+    }
+    
+    
+    section {
+        margin: 100px auto; /* Space between sections to reveal Medusa background */
+        padding: 15px 15px; /* Internal padding for content */
+        width: 100%; /* Full width minus 100px padding on each side */
+        max-width: 2000px; /* Maximum width for larger screens */
+        box-sizing: border-box; /* Include padding in the width calculation */
     }
 
+    /* Section Titles */
+    .section-title {
+        font-size: 1.5rem; /* Increased size for section titles */
+        margin-bottom: 2px;
+        text-transform: uppercase;
+        color: white;
+        text-align: left;
+    }
+    
     .main-title {
         font-size: 3rem; /* Smaller font size for tablets */
         text-align: left; /* Center-align text */
@@ -582,7 +618,7 @@ footer {
     .sub-title {
         font-size: 1.5rem; /* Adjust subtitle size */
         text-align: left; /* Center-align text */
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .intro-description {
@@ -602,21 +638,24 @@ footer {
     .resume-button, .contact-button {
         width: auto; /* Ensure buttons resize automatically */
         max-width: 45%; /* Restrict width to fit comfortably */
-        padding: 10px 20px; /* Adjust padding for smaller buttons */
+        padding: 10px 10px; /* Adjust padding for smaller buttons */
         margin: 0; /* Remove any margin causing overlap */
     }
     .section-title {
         font-size: 1.5rem;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         text-align: left;
     }
 
     /* Project Content Layout */
     .project-content {
         display: flex;
+        width: 90%;
+        padding: 10px;
         flex-direction: column;/* Flexbox layout for image and text */
         gap: 10px; /* Space between image and text */
         align-items: left; /* Vertically align content */
+
     }
 
     .project-image-container {
@@ -634,11 +673,19 @@ footer {
 
     .large-content-box {
         display: flex;
+        width: 90%;
+        min-height: auto;
         flex-direction: column; /* Stack image and text vertically */
         gap: 15px; /* Add space between the image and text */
         padding: 10px; /* Reduce padding for more content visibility */
         margin: 0 auto; /* Center-align the content */
         width: 100%;;
+    }
+
+    /* Horizontal Scroll for Content Boxes */
+    .horizontal-scroll {
+        gap: 15px;
+        padding: 10px;
     }
 
     .project-details {
@@ -681,4 +728,15 @@ footer {
         margin-bottom: 10px;
         text-align: left;
     }
+
+    .social-icon {
+        width: 40px; /* Decrease width for smaller icons */
+        height: 40px; /* Decrease height for proportional scaling */
+        transition: transform 0.2s ease, filter 0.2s ease; /* Keep hover effects smooth */
+    }
+
+    .updated-layout {
+        gap: 35px; /* Reduce spacing between icons */
+    }
+
 }

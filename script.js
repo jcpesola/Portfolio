@@ -30,6 +30,13 @@ function enlargeImage(src) {
     modalImage.style.transform = `scale(${scale}) translate(0px, 0px)`;
 }
 
+function openPDFModal() {
+    const pdfModal = document.getElementById('pdf-modal');
+    if (pdfModal) {
+        pdfModal.style.display = 'flex'; // Show the modal
+    }
+}
+
 // Close Modal Function
 function closeModal() {
     const modal = document.getElementById("modal");

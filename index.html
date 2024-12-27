@@ -20,20 +20,19 @@
         <div class="intro">
             <h1 class="main-title">Julia Pesola</h1>
             <h2 class="sub-title">Designer & Developer</h2>
-            <div class="button-container">
-                <button id="resume-btn" class="resume-button">Resume</button>
-                <button id="contact-btn" class="contact-button">Contact</button>
-            </div>
             <p class="intro-description">
                 Based in New York, I am a developer and designer working as both a Software Engineer and an Architect. With experience in back-end and front-end development, I am a full-stack engineer with an eye for design and a passion for solving complex problems. My diverse background fuels my ability to create thoughtful, innovative solutions, bridging the worlds of architecture and technology.
             </p>
-            
-            <!-- Modal for PDF Viewer -->
-            <div id="pdf-modal" class="pdf-modal">
-                <div class="pdf-modal-content">
-                    <button class="pdf-modal-close" onclick="closePDFModal()">×</button>
-                    <iframe id="pdf-viewer" src="Artwork/J_Pesola Resume 2024.pdf" frameborder="0"></iframe>
-                </div>
+            <div class="button-container">
+                <button id="resume-btn" class="resume-button" onclick="openPDFModal()">Resume</button>
+                <button id="contact-btn" class="contact-button">Contact</button>
+            </div>            
+        </div>
+          <!-- Modal for PDF Viewer -->
+        <div id="pdf-modal" class="pdf-modal">
+            <div class="pdf-modal-content">
+                <button class="pdf-modal-close" onclick="closePDFModal()">×</button>
+                <iframe id="pdf-viewer" src="Artwork/J_Pesola Resume 2024.pdf" frameborder="0"></iframe>
             </div>
         </div>
     </section>
