@@ -1,7 +1,3 @@
-Here’s a more fun and engaging version of your README file:
-
----
-
 # My Personal Portfolio Website
 
 Welcome to my personal corner on the web! 🌟 This project is my first-ever website built using **HTML**, **CSS**, and **JavaScript**. It’s a digital canvas where I showcase my journey as a full-stack developer, architect, and artist—combining creativity and code to tell my story.
@@ -31,7 +27,3 @@ This is my first website created using the **HTML**, **CSS**, and **JavaScript**
 
 The website is live and ready for you to explore:  
 👉 **[Visit My Portfolio Website](https://juliapesola.com)** 👈
-
----
-
-What do you think? Let me know if you'd like to sprinkle on more fun or adjust anything! 🎉
