@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Pesola Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#projects">Projects</a>
+            <a href="#artwork">Artwork</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="fixed-bg">
+        <div class="intro">
+            <h1 class="main-title">Julia Pesola</h1>
+            <h2 class="sub-title">Designer & Developer</h2>
+            <div class="button-container">
+                <button id="resume-btn" class="resume-button">Resume</button>
+                <button id="contact-btn" class="contact-button">Contact</button>
+            </div>
+            <p class="intro-description">
+                Based in New York, I am a developer and designer working as both a Software Engineer and an Architect. With experience in back-end and front-end development, I am a full-stack engineer with an eye for design and a passion for solving complex problems. My diverse background fuels my ability to create thoughtful, innovative solutions, bridging the worlds of architecture and technology.
+            </p>
+            
+            <!-- Modal for PDF Viewer -->
+            <div id="pdf-modal" class="pdf-modal">
+                <div class="pdf-modal-content">
+                    <button class="pdf-modal-close" onclick="closePDFModal()">×</button>
+                    <iframe id="pdf-viewer" src="Artwork/J_Pesola Resume 2024.pdf" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="horizontal-scroll">
+            <!-- Clean Choice and Book Library Recommender Projects -->
+            <div class="horizontal-scroll">
+                <div class="large-content-box">
+                    <div class="project-content">
+                        <div class="project-image-container">
+                            <img src="Artwork/laundry_decider_db_schema.png" alt="Clean Choice Project" class="project-image" onclick="enlargeImage(this.src)">
+                            <p class="project-caption">Clean Choice Database Schema</p>
+                        </div>
+                        <div class="project-details">
+                            <h3>Clean Choice</h3>
+                            <p>
+                                A crowdsourced app for real-time price tracking of laundry services, including dry cleaning and wash-and-fold.
+                                Designed to help users compare prices and find nearby services with ease.
+                            </p>
+                            <a href="https://github.com/jcpesola/clean-choice" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-content-box">
+                    <div class="project-content">
+                        <div class="project-image-container">
+                            <img src="Artwork/internet-archive.jpg" alt="Book Library Recommender Project" class="project-image" onclick="enlargeImage(this.src)">
+                            <p class="project-caption">Internet Archive - Library Recommender</p>
+                        </div>
+                        <div class="project-details">
+                            <h3>Book Library Recommender</h3>
+                            <p>
+                                Personalized book recommendation software leveraging Open Library's API.
+                                Uses sorting algorithms to organize recommendations and provide a streamlined reading experience.
+                            </p>
+                            <a href="https://github.com/jcpesola/book-recommender" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Enlarged Images -->
+    <div id="modal" class="modal">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div class="zoom-controls">
+            <button class="zoom-button" onclick="zoomIn()">+</button>
+            <button class="zoom-button" onclick="zoomOut()">-</button>
+        </div>
+        <img id="modal-image" src="" alt="Enlarged Artwork">
+    </div>
+
+
+
+    <section id="artwork">
+        <h2 class="section-title">Artwork</h2>
+        
+        <!-- Selected Artwork Section -->
+        <div class="artwork-section">
+            <h3 class="artwork-subtitle">Selected Artwork</h3>
+            <div class="horizontal-scroll">
+                <div class="artwork-container">
+                    <img src="Artwork/collosseo sketch.jpg" alt="Colosseo Sketch" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/san andrea dome sketch.jpg" alt="San Andrea Dome Sketch" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/pantheon sketch.jpg" alt="Pantheon Sketch" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/baptistry.jpg" alt="Baptistry" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/venezia sketch.jpg" alt="Venezia Sketch" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/Caprarola Anlysis.jpg" alt="Caprarola Analysis" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+            </div>
+        </div>
+    
+        <!-- Architecture Thesis Section -->
+        <div class="artwork-section">
+            <h3 class="artwork-subtitle">Architecture Thesis 2022</h3>
+            <div class="horizontal-scroll">
+                <!-- Include the images here as done above, with captions -->
+                <div class="artwork-container">
+                    <img src="Artwork/7.jpg" alt="Thesis Image 7" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/14.jpg" alt="Thesis Image 14" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/8.jpg" alt="Thesis Image 8" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/9.jpg" alt="Thesis Image 9" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/10.jpg" alt="Thesis Image 10" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/6.jpg" alt="Thesis Image 6" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/11.jpg" alt="Thesis Image 11" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/1.jpg" alt="Thesis Image 1" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/2.jpg" alt="Thesis Image 2" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/3.jpg" alt="Thesis Image 3" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/4.jpg" alt="Thesis Image 4" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/5.jpg" alt="Thesis Image 5" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/12.jpg" alt="Thesis Image 12" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/13.jpg" alt="Thesis Image 13" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+            </div>
+        </div>
+    
+        <!-- Sketches Section -->
+        <div class="artwork-section">
+            <h3 class="artwork-subtitle">Sketches from Rome 2019 - 2020</h3>
+            <div class="horizontal-scroll">
+                <!-- Include the images here as done above, with captions -->
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 2.4.jpeg" alt="Sketchbook 1" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 2.5.jpeg" alt="Sketchbook 2" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 2.6.jpeg" alt="Sketchbook 3" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 2.7.jpeg" alt="Sketchbook 4" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 2.8.jpeg" alt="Sketchbook 5" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 2.9.jpeg" alt="Sketchbook 6" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 2.10.jpeg" alt="Sketchbook 7" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.9.jpeg" alt="Sketchbook 8" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.10.jpeg" alt="Sketchbook 9" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.11.jpeg" alt="Sketchbook 10" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.12.jpeg" alt="Sketchbook 11" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.13.jpeg" alt="Sketchbook 12" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.14.jpeg" alt="Sketchbook 13" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.15.jpeg" alt="Sketchbook 14" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.16.jpeg" alt="Sketchbook 15" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 2.1.jpeg" alt="Sketchbook 16" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 2.2.jpeg" alt="Sketchbook 17" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork//sketchbook 1.2.jpeg" alt="Sketchbook 18" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.3.jpeg" alt="Sketchbook 19" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src=" Artwork/sketchbook 1.4.jpeg" alt="Sketchbook 20" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.5.jpeg" alt="Sketchbook 21" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.6.jpeg" alt="Sketchbook 22" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.7.jpeg" alt="Sketchbook 23" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/sketchbook 1.8.jpeg" alt="Sketchbook 24" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+            </div>  
+        </div>
+    </section>
+    
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="social-links updated-layout">
+            <a href="https://github.com/jcpesola" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/julia-pesola" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="mailto:copiers.osier4v@icloud.com">
+                <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" class="social-icon">
+            </a>
+        </div>
+    </section>
+
+    
+
+    <!-- Modal for Enlarged Artwork -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <img id="modal-image" src="" alt="Enlarged Artwork">
+    </div>
+
+    <footer>
+        <p>© 2024 Julia Pesola</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
