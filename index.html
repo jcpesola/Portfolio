@@ -41,7 +41,7 @@
     <section id="projects">
         <h2 class="section-title">Projects</h2>
         <div class="horizontal-scroll">
-            <!-- Clean Choice and Book Library Recommender Projects -->
+            <!-- Clean Choice Projects -->
             <div class="horizontal-scroll">
                 <div class="large-content-box">
                     <div class="project-content">
@@ -55,10 +55,14 @@
                                 A crowdsourced app for real-time price tracking of laundry services, including dry cleaning and wash-and-fold.
                                 Designed to help users compare prices and find nearby services with ease.
                             </p>
+                            <p class="tech-used">
+                                <strong>Technologies:</strong> Python, Flask, PostgresSQL, SQLAlchemy, Google Maps API, Postman, Geocoding API, Git, GitHub
+                            </p>
                             <a href="https://github.com/jcpesola/clean-choice" target="_blank">View on GitHub</a>
                         </div>
                     </div>
                 </div>
+                <!-- Book Library Recommender Project-->
                 <div class="large-content-box">
                     <div class="project-content">
                         <div class="project-image-container">
@@ -68,10 +72,33 @@
                         <div class="project-details">
                             <h3>Book Library Recommender</h3>
                             <p>
-                                Personalized book recommendation software leveraging Open Library's API.
-                                Uses sorting algorithms to organize recommendations and provide a streamlined reading experience.
+                                This project is a personalized book recommendation software that leverages data from Open Library's API.
+                                It uses sorting algorithms to organize recommendations and provide a streamlined reading experience for user's based on their preferred genres. 
                             </p>
-                            <a href="https://github.com/jcpesola/book-recommender" target="_blank">View on GitHub</a>
+                            <p class="tech-used">
+                                <strong>Technologies:</strong> Python, Open Library API, Git, GitHub
+                            </p>
+                            <a href="https://github.com/jcpesola/Book-Recommender" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Website Project -->
+                <div class="large-content-box">
+                    <div class="project-content">
+                        <div class="project-image-container">
+                            <img src="Artwork/portfolio_website.jpg" alt="Portfolio Website Project" class="project-image" onclick="enlargeImage(this.src)">
+                            <p class="project-caption">Portfolio Website Project</p>
+                        </div>
+                        <div class="project-details">
+                            <h3>Portfolio Website</h3>
+                            <p>
+                                A personal portfolio website showcasing my personal coding projects as well as artwork and architectural projects from my time at the University of Notre Dame. The website is optimized for desktop, tablet, and mobile devices. 
+                            </p>
+                            <p class="tech-used">
+                                <strong>Technologies:</strong> HTML, CSS, JavaScript, Git, GitHub
+                            </p>
+                            <a href="https://github.com/jcpesola/Portfolio" target="_blank">View on GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -79,49 +106,27 @@
         </div>
     </section>
 
-    <!-- Modal for Enlarged Images -->
+    <!-- Modal for Enlarged Artwork -->
     <div id="modal" class="modal">
-        <button class="modal-close" onclick="closeModal()">×</button>
-        <div class="zoom-controls">
-            <button class="zoom-button" onclick="zoomIn()">+</button>
-            <button class="zoom-button" onclick="zoomOut()">-</button>
-        </div>
+        <button class="modal-arrow left-arrow" onclick="showPreviousImage()">&#8592;</button> <!-- Left Arrow -->
         <img id="modal-image" src="" alt="Enlarged Artwork">
+        <button class="modal-arrow right-arrow" onclick="showNextImage()">&#8594;</button> <!-- Right Arrow -->
+        <div class="modal-controls bottom-controls">
+            <button class="zoom-button" onclick="zoomIn()">+</button> <!-- Zoom In -->
+            <button class="zoom-button" onclick="zoomOut()">-</button> <!-- Zoom Out -->
+        </div>
+        <button class="modal-close" onclick="closeModal()">×</button> <!-- Close Button -->
     </div>
-
-
 
     <section id="artwork">
         <h2 class="section-title">Artwork</h2>
-        
-        <!-- Selected Artwork Section -->
-        <div class="artwork-section">
-            <h3 class="artwork-subtitle">Selected Artwork</h3>
-            <div class="horizontal-scroll">
-                <div class="artwork-container">
-                    <img src="Artwork/collosseo sketch.jpg" alt="Colosseo Sketch" class="artwork" onclick="enlargeImage(this.src)">
-                </div>
-                <div class="artwork-container">
-                    <img src="Artwork/san andrea dome sketch.jpg" alt="San Andrea Dome Sketch" class="artwork" onclick="enlargeImage(this.src)">
-                </div>
-                <div class="artwork-container">
-                    <img src="Artwork/pantheon sketch.jpg" alt="Pantheon Sketch" class="artwork" onclick="enlargeImage(this.src)">
-                </div>
-                <div class="artwork-container">
-                    <img src="Artwork/baptistry.jpg" alt="Baptistry" class="artwork" onclick="enlargeImage(this.src)">
-                </div>
-                <div class="artwork-container">
-                    <img src="Artwork/venezia sketch.jpg" alt="Venezia Sketch" class="artwork" onclick="enlargeImage(this.src)">
-                </div>
-                <div class="artwork-container">
-                    <img src="Artwork/Caprarola Anlysis.jpg" alt="Caprarola Analysis" class="artwork" onclick="enlargeImage(this.src)">
-                </div>
-            </div>
-        </div>
-    
-        <!-- Architecture Thesis Section -->
-        <div class="artwork-section">
+       
+         <!-- Architecture Thesis Section -->
+         <div class="artwork-section">
             <h3 class="artwork-subtitle">Architecture Thesis 2022</h3>
+            <p class="artwork-description">
+                From 2017 to 2022, I studied architecture at the University of Notre Dame, culminating in a thesis inspired by the ruins of Halcyon Hall in Millbrook, NY. Once a grand hotel turned girls' school, the site was slated for demolition during my 2021 internship nearby. I proposed a new hotel honoring its historic footprint, blending Millbrook’s rich heritage with a vision to revitalize the property as a destination in the Hudson Valley.
+            </p>
             <div class="horizontal-scroll">
                 <!-- Include the images here as done above, with captions -->
                 <div class="artwork-container">
@@ -168,10 +173,42 @@
                 </div>
             </div>
         </div>
+
+        <!-- Selected Artwork Section -->
+        <div class="artwork-section">
+            <h3 class="artwork-subtitle">Selected Artwork</h3>
+            <p class="artwork-description">
+                From 2019 to 2020, I studied abroad in Rome, immersing myself in the city's rich artistic heritage. During this time, I explored various media, including charcoal, ink, and watercolor, to capture the essence of Roman architecture, landscapes, and everyday life. This collection showcases my artistic growth and my deep connection to the timeless beauty of Rome.
+            </p>
+            <div class="horizontal-scroll">
+                <div class="artwork-container">
+                    <img src="Artwork/collosseo sketch.jpg" alt="Colosseo Sketch" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/san andrea dome sketch.jpg" alt="San Andrea Dome Sketch" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/pantheon sketch.jpg" alt="Pantheon Sketch" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/baptistry.jpg" alt="Baptistry" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/venezia sketch.jpg" alt="Venezia Sketch" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+                <div class="artwork-container">
+                    <img src="Artwork/Caprarola Anlysis.jpg" alt="Caprarola Analysis" class="artwork" onclick="enlargeImage(this.src)">
+                </div>
+            </div>
+        </div>
+    
     
         <!-- Sketches Section -->
         <div class="artwork-section">
             <h3 class="artwork-subtitle">Sketches from Rome 2019 - 2020</h3>
+            <p class="artwork-description">
+                During my year abroad in Rome, I filled my notebooks with sketches of architectural details and notes on the histories of the sites I visited as part of Notre Dame’s architecture program. These studies deepened my understanding of architectural history, inspiring me to draw lessons from the past to inform thoughtful and relevant designs for today’s world.
+            </p>
             <div class="horizontal-scroll">
                 <!-- Include the images here as done above, with captions -->
                 <div class="artwork-container">
